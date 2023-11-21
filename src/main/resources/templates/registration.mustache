@@ -9,7 +9,9 @@ Add new user
     {{message}}
 {{/message}}
 <form action="/registration" method="post">
-    <div><label> First Name : <input type="text" name="firstName"/> </label></div>
+    <div><label> First Name : <input type="text" name="firstName" /> </label>
+     <p class="error">{{#errors.firstName}}{{.}}{{/errors.firstName}}</p>
+    </div>
     <div><label> Last Name : <input type="text" name="lastName"/> </label></div>
     <div><label> Email : <input type="text" name="email"/> </label></div>
     <div><label> Password: <input type="password" name="password"/> </label></div>

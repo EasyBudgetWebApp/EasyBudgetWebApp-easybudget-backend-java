@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
+<head>
+    <title>Formular User</title>
+</head>
+<body>
+Add new user
+{{#message}}
+    {{message}}
+{{/message}}
+    <form action="/registration1" method="post">
+        <div>
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName" value="{{user.firstName}}">
+            <p class="error">{{#errors.firstName}}{{.}}{{/errors.firstName}}</p>
+        </div>
+        <div>
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName" value="{{user.lastName}}">
+            <p class="error">{{#errors.lastName}}{{.}}{{/errors.lastName}}</p>
+        </div>\
+        <div>
+             <label for="email">Email</label>
+             <input type="text" id="email" name="email" value="{{user.email}}">
+             <p class="error">{{#errors.email}}{{.}}{{/errors.email}}</p>
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" value="{{user.password}}">
+            <p class="error">{{#errors.password}}{{.}}{{/errors.password}}</p>
+        </div>
+        <div>
+            <label for="gender">Gender</label>
+            <input type="text" id="gender" name="gender" value="{{user.gender}}">
+            <p class="error">{{#errors.gender}}{{.}}{{/errors.gender}}</p>
+        </div>
+        <div>
+            <label for="dateOfBirth">Date Of Birth</label>
+            <input type="text" id="dateOfBirth" name="dateOfBirth" value="{{user.dateOfBirth}}">
+            <p class="error">{{#errors.dateOfBirth}}{{.}}{{/errors.dateOfBirth}}</p>
+        </div>
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+        <input type="submit" value="Trimite">
+    </form>
+</body>
+</html>
